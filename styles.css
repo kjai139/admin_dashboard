@@ -1,9 +1,14 @@
-html, body {
+html, body, .leftContainer, .rightContainer, .bodyContainer {
+    
     padding: 0;
     margin: 0;
+    height:100%;
+}
+.leftmenu1Container {
+    margin-bottom: 60px;
 }
 
-.leftmenu1 {
+.leftmenu1, .leftmenu2 {
     display:flex;
     flex-direction: column;
     
@@ -14,34 +19,58 @@ html, body {
     padding-left: 30px;
 }
 
-.leftmenu1 > li {
+.dashboardtxt {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.leftmenu1 > li > a, .leftmenu2 > li > a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+    
+}
+
+
+.leftmenu1 > li, .leftmenu2 > li {
     list-style-type: none;
     display:flex;
     align-items: center;
     gap:10px;
+    font-size: 12px;
+    
+   
   
     
     
 }
 
-.leftmenu1Container > * {
+.leftmenu1Container > *, .leftmenu2Container > * {
     color: white;
+    display:flex;
 }
 
 .bodyContainer {
     display:flex;
+    
 }
 
 .leftContainer {
-    background: #fecaca;
+    background: #3b82f6;
 
     display:flex;
     flex-direction: column;
+    flex: 1 1 0;
+
+
 }
 
 
 .dashboardLogo {
     margin-left: 10px;
+    margin-bottom: 30px;
 }
 
 .dashboardLogo, .logo {
@@ -55,13 +84,47 @@ html, body {
     
 }
 
-.dashboardtxt > p {
-    font-size: 32px;
-}
-.leftmenu1Container {
-    display:flex;
-    
-}
+
 .dashboardLogo, .leftmenu1Container {
     margin-right: 40px;
+}
+
+
+/** right container **/
+
+.rightContainer {
+    display:flex;
+    width:100%;
+    
+}
+
+.topRightContainer{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px 15px 10px 15px;
+    
+}
+
+.tophalfContainer, .bottomhalfContainer {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.userInfo {
+    display:flex;
+    align-items: center;
+}
+
+.userAvatar {
+    display:flex;
+}
+
+.rightUserInfo, .rightUserInfo * p{
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
