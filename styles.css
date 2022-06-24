@@ -1,8 +1,16 @@
+:root {
+    --blue: #60a5fa;
+    --globalFont: 'Noto Sans', sans-serif;
+
+    --cardColor: #60a5fa;
+}
+
+
 html, body, .leftContainer, .rightContainer, .bodyContainer {
     
     padding: 0;
     margin: 0;
-    height:100%;
+    height:auto;
 }
 .leftmenu1Container {
     margin-bottom: 60px;
@@ -54,15 +62,17 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
 
 .bodyContainer {
     display:flex;
+    flex-grow: 1;
+    
     
 }
 
 .leftContainer {
-    background: #3b82f6;
+    background: var(--blue);
 
     display:flex;
     flex-direction: column;
-    flex: 1 1 0;
+    flex-grow: 1;
 
 
 }
@@ -95,14 +105,23 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
 .rightContainer {
     display:flex;
     width:100%;
+    flex-direction: column;
+    flex-grow: 1;
     
 }
 
-.topRightContainer{
+.topRightContainer {
+
     display:flex;
     flex-direction: column;
-    flex-grow: 1;
+}
+.topRightContainer, .bottomRightContainer{
+    
+    
+    
     padding: 10px 15px 10px 15px;
+    margin-right: 15px;
+    gap:5px;
     
 }
 
@@ -110,21 +129,234 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     display:flex;
     align-items: center;
     justify-content: space-between;
+    gap:50px;
 
 }
 
 .userInfo {
     display:flex;
     align-items: center;
+    gap:5px;
+    flex-grow: 1;
+}
+.rightUserInfo {
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.leftUserInfo {
+    display:flex;
+    color: var(--blue);
+}
+
+.rightUserInfoSmall {
+    
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.rightUserInfoBig {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .userAvatar {
     display:flex;
+    align-items: center;
+    gap:20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+
+.userAvatarSvg {
+    color: var(--blue);
 }
 
 .rightUserInfo, .rightUserInfo * p{
+    font-family: 'Noto Sans', sans-serif;
     display:flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+}
+.searchbar {
+    display:flex;
+    flex-grow: 1;
+    
+    
+}
+.searchButton {
+    cursor: pointer;
+    background-color: white;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.searchbar > form {
+    display:flex;
+    align-items: center;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.searchbar form > input {
+    flex: 1 0 0;
+    background-color:#e2e8f0;
+    border-radius: 10px;
+    border: 0;
+    height:1rem;
+    padding: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    
+}
+
+.uiButtons {
+    display:flex;
+    gap:15px;
+}
+
+.uiButtons > button {
+    width:100px;
+    cursor: pointer;
+    background: var(--blue);
+    font-weight: bold;
+    color: white;
+    font-family: var(--globalFont);
+    border: 0;
+    border-radius: 17px;
+    padding: 8px 20px 8px 20px;
+}
+
+
+.uiButtons, .userAvatar {
+    width: 330px;
+    justify-content: flex-end;
+
+}
+
+.bottomrightFlex {
+    display:flex;
+}
+
+.bottomRightContainer {
+    background-color:#e2e8f0;
+    margin-right: 0;
+    display:grid;
+    gap: 20px;
+    grid-template-columns: 2fr 2fr 1.5fr;
+    
+    
+}
+
+.card {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    border: 1px solid white;
+    border-radius: 5px;
+    
+    
+    background-color: white;
+}
+
+.announcement {
+  
+    border: 0;
+    border-bottom: 3px solid black;
+    height:100px;
+    background-color: white;
+    
+   
+    
+    
+    
+}
+.announcement > p > b {
+    font-size: 14px;
+}
+.announcement > p {
+    font-family: var(--globalFont);
+    font-size: 12px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    
+    
+    
+    
+}
+
+.cardBtns, .cardtxt {
+    padding: 10px;
+}
+
+.cardBtns {
+    justify-self: end;
+}
+
+.cardtxt {
+    
+}
+
+.mainContent {
+    display:grid;
+    gap:10px;
+    grid-template-columns: 1fr 1fr;
+    
+
+    grid-row: 2/9;
+    grid-column: 1/3;
+}
+
+.projectHeader {
+    grid-column: 1/2;
+    grid-row: 1/1;
+    
+    
+}
+
+.announcementHeader {
+    grid-column: 3/3;
+    grid-row: 1/1;
+}
+
+.projectHeader, .announcementHeader {
+    margin-bottom: -10px;
+}
+
+.projectHeader > p, .announcementHeader > p {
+    display:flex;
+    margin: 0;
+    padding: 5px 0px 0px 0px;
+    font-family: var(--globalFont);
+    font-weight: bold;
+    
+}
+
+.announcementContent1 {
+    display:grid;
+    grid-template-columns: 1fr;
+    
+}
+
+.sideBarGrid {
+    display:grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+
+    grid-column: 3/3;
+    grid-row: 2/5;
+}
+
+.announcementContent1 > .announcement {
+    padding: 10px;
+   
 }
