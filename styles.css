@@ -3,14 +3,15 @@
     --globalFont: 'Noto Sans', sans-serif;
 
     --cardColor: #60a5fa;
+    --avaColor: #60a5fa;
 }
 
 
 html, body, .leftContainer, .rightContainer, .bodyContainer {
-    
+    display:flex;
     padding: 0;
     margin: 0;
-    height:auto;
+    
 }
 .leftmenu1Container {
     margin-bottom: 60px;
@@ -65,6 +66,7 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     flex-grow: 1;
     
     
+    
 }
 
 .leftContainer {
@@ -73,6 +75,8 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     display:flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+    box-shadow: 5px 0px 5px -5px #888;
 
 
 }
@@ -107,20 +111,37 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     width:100%;
     flex-direction: column;
     flex-grow: 1;
+    height:100%;
+    
+}
+
+.leftContainer {
+    height:auto;
+}
+
+.leftmenu1Container, .dashboardLogo {
+    display:flex;
+    
+}
+.bottomrightFlex, .leftmenu2Container{
+    display:flex;
+    flex-grow: 1;
     
 }
 
 .topRightContainer {
-
+    margin-right: 0px;
     display:flex;
     flex-direction: column;
 }
+
+
 .topRightContainer, .bottomRightContainer{
     
     
     
     padding: 10px 15px 10px 15px;
-    margin-right: 15px;
+    
     gap:5px;
     
 }
@@ -247,19 +268,47 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     display:grid;
     gap: 20px;
     grid-template-columns: 2fr 2fr 1.5fr;
+    padding-bottom: 40px;
     
     
+    
+}
+
+.card, .sideBarGrid, .trendingGrid, .topRightContainer {
+    position: relative;
+    box-shadow: 0px 5px 5px -5px #888;
 }
 
 .card {
     display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 1fr;
-    border: 1px solid white;
-    border-radius: 5px;
-    
-    
+    border: 0px solid white;
+    border-radius: 7px;
+    border-left: 8px solid var(--avaColor);
+    font-family: var(--globalFont);
     background-color: white;
+    
+    
+}
+
+.cardtxt > p {
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.cardtxt > p > br {
+    display:block;
+    margin-top: 5px;
+    content:'';
+    
+}
+
+.cardtxt {
+    font-size: 14px;
 }
 
 .announcement {
@@ -277,6 +326,7 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
 .announcement > p > b {
     font-size: 14px;
 }
+
 .announcement > p {
     font-family: var(--globalFont);
     font-size: 12px;
@@ -304,7 +354,8 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
 
 .mainContent {
     display:grid;
-    gap:10px;
+    row-gap: 20px;
+    column-gap: 15px;
     grid-template-columns: 1fr 1fr;
     
 
@@ -324,11 +375,16 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     grid-row: 1/1;
 }
 
-.projectHeader, .announcementHeader {
+.trendingHeader {
+    grid-column: 3/3;
+    grid-row: 5/5;
+}
+
+.projectHeader, .announcementHeader, .trendingHeader {
     margin-bottom: -10px;
 }
 
-.projectHeader > p, .announcementHeader > p {
+.projectHeader > p, .announcementHeader > p, .trendingHeader > p {
     display:flex;
     margin: 0;
     padding: 5px 0px 0px 0px;
@@ -343,6 +399,10 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     
 }
 
+.sideBarGrid, .announcementHeader, .trendingHeader, .trendingGrid {
+    margin-right: 15px;
+} 
+
 .sideBarGrid {
     display:grid;
     grid-template-columns: 1fr;
@@ -354,7 +414,66 @@ html, body, .leftContainer, .rightContainer, .bodyContainer {
     grid-row: 2/5;
 }
 
+.trendingGrid {
+    display:grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    
+    grid-column: 3/3;
+    grid-row: 6/9;
+
+}
+
+.trending {
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    gap:5px;
+    padding: 10px 10px 5px 10px;
+
+}
+.trendingUser {
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.smalltrending {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.bigtrending {
+    font-size: 12px;
+}
+
+.smalltrending > p, .bigtrending > p {
+    display:flex;
+    justify-content: flex-start;
+    margin: 0;
+    font-family: var(--globalFont);
+}
+
+.trendingAvatar {
+    display:flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.trendingUser {
+    padding: 5px;
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+   
+   
+}
+
+
 .announcementContent1 > .announcement {
     padding: 10px;
    
 }
+
